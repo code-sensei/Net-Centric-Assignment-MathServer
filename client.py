@@ -10,12 +10,14 @@ message = []
 # ask user for the operation they want to perform
 operation = input(
     """
-        Net-Centric Math Server
+        *** MATH SERVER BY: 2014/1/52370CT ***
         
         Please select an operation to perform:
-        1 - Addidtion   2 - Subtraction     3 - Multiplication
-                    4 - Division    5 - Modulus
-        >_ 
+        1 - Addition
+        2 - Subtraction
+        3 - Multiplication
+        4 - Division
+        5 - Modulus
     """
 )
 
@@ -23,8 +25,8 @@ operation = input(
 message.append(str(operation))
 
 # ask user for the two values on which the operation is performed
-first_variable = input('enter the first value: >_ ')
-second_variable = input('enter the second value: >_ ')
+first_variable = input('enter the first value: ')
+second_variable = input('enter the second value: ')
 
 # add the values to the message
 message.append(str(first_variable))
@@ -34,10 +36,10 @@ message.append(str(second_variable))
 message = ','.join(message)
 
 # send message to client-side
-socket.sendto(message, ('localhost', 1998))
+socket.sendto(message, ('localhost', 2018))
 
 # receive result from server
-server_result, server_address = socket.recvfrom(1024*3)
+server_result, server_address = socket.recvfrom(3096)
 print('server result: ' + server_result)
 
 # close connection between client and server
